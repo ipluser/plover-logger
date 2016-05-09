@@ -28,12 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plover-modules/logger.git"
+    "url": "git+https://github.com/plover-modules/plover-logger.git"
   },
   "author": "bencode@163.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/plover-modules/logger/issues"
+    "url": "https://github.com/plover-modules/plover-logger/issues"
   },
-  "homepage": "https://github.com/plover-modules/logger#readme"
+  "homepage": "https://github.com/plover-modules/plover-logger#readme"
 }

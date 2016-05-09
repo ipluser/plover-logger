@@ -4,7 +4,7 @@
 
 ### Features
 
-* 初始化版本 ([e4c47cf](https://github.com/plover-modules/logger/commit/e4c47cf))
+* 初始化版本 ([e4c47cf](https://github.com/plover-modules/plover-logger/commit/e4c47cf))
 
 
 
