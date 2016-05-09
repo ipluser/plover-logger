@@ -132,6 +132,42 @@ describe('index', function() {
   });
 
 
+  /* eslint max-statements: 0 */
+  it('生产环境（设置过NODE_ENV)场景默认使用console记录日志', function() {
+    delete process.env.DEBUG;
+    process.env.NODE_ENV = 'production';
+
+    // 重新加载
+    const path = require.resolve('..');
+    delete require.cache[path];
+    const create = require(path).Logger;
+    create.level = 'debug';
+
+    sinon.spy(console, 'log');
+    sinon.spy(console, 'info');
+    sinon.spy(console, 'warn');
+    sinon.spy(console, 'error');
+
+    const log = create('test');
+    log.debug('some debug message');
+    log.info('some info message');
+    log.warn('some warn message');
+    log.error('some error message');
+
+    console.log.called.should.be.true();
+    console.info.called.should.be.true();
+    console.warn.called.should.be.true();
+    console.error.called.should.be.true();
+
+    delete process.env.NODE_ENV;
+
+    console.log.restore();
+    console.info.restore();
+    console.warn.restore();
+    console.error.restore();
+  });
+
+
   function getMessage(index) {
     return Logger.handler.getCall(index).args[2];
   }
